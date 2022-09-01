@@ -172,17 +172,19 @@ create(env_dir)
 createМетод EnvBuilderкласса иллюстрирует крючки, доступные для настройки подкласса:
 
 ```python
-def  create(self, env_dir):
-     
-#Создайте виртуализированную среду Python в каталоге.
-#env_dir - это целевой каталог для создания среды.
 
+def  create(self, env_dir):
+    '''
+    Создайте виртуализированную среду Python в каталоге.
+    env_dir - это целевой каталог для создания среды.
+    '''
     env_dir = os.path.abspath(env_dir)
     context = self.ensure_directories(env_dir)
     self.create_configuration(context)
     self.setup_python(context)
     self.setup_scripts(context)
     self.post_setup(context)
+
 ```
 
 Каждый из методов ensure_directories(), create_configuration(), setup_python(), setup_scripts()и post_setup()может быть переопределен.
@@ -449,8 +451,8 @@ def main(args=None):
                                        verbose=options.verbose)
         for d in options.dirs:
             builder.create(d)
-
-if __name__ == '__main__':
+    
+    if __name__ == '__main__':
     rc = 1
     try:
         main()
@@ -458,4 +460,5 @@ if __name__ == '__main__':
     except Exception as e:
         print('Error: %s' % e, file=sys.stderr)
     sys.exit(rc)
+
 ```
