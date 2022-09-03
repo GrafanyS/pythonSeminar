@@ -12,9 +12,12 @@
 - x=-34; y=-30 -> 3
 
 """
+from os import system
+system('cls')
 
 
-def input_koord(x):   # функция проверки истинности утверждения
+def input_koord(x):   # функция проверки истинности утверждения,
+    # которая принимает на вход координаты точки (X и Y)
     a = [0] * x
     for i in range(x):
         is_OK = False

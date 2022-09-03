@@ -10,7 +10,8 @@
 - A (7,-5); B (1,-1) -> 7,21
 
 """
-
+from os import system
+system('cls')
 
 def input_numbers(x):  # функция проверки на ввод целго числа
     xy = ["X", "Y"]

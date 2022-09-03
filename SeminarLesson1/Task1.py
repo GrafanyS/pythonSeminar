@@ -10,7 +10,8 @@
 - 1 -> нет
 
 """
-
+from os import system
+system('cls')
 
 def input_numbers(input_text):  # функция проверки на ввод числа
     is_OK = False
