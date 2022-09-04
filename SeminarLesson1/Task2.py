@@ -44,8 +44,8 @@ from os import system
 system('cls')
 
 
-def input_koord(x):   # функция проверки истинности утверждения,
-    # которая принимает на вход координаты точки (X и Y)
+def input_koord(x):   # функция ввода координат,
+    # которая принимает на вход координаты точки (X )
     a = [0] * x
     for i in range(x):
         is_OK = False
