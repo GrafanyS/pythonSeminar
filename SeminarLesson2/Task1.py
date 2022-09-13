@@ -23,7 +23,7 @@ def input_number(text):
             if is_minus:
                 coord *= -1
             int_test = False
-        elif coord.isdecimal:
+        elif coord.isdecimal():
             coord = float(coord)
             if is_minus:
                 coord *= -1
