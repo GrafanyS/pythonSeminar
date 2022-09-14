@@ -11,20 +11,22 @@
 
 my_nums = [2, 3, 5, 9, 3]
 '''
-Решение 1. С помощью функции sum_of_add_elements нахождения 
+Решение 1. С помощью функции sum_elements нахождения 
 суммы элементов на нечетной позиции
 '''
-def sum_of_add_elements(lst):
+
+
+def sum_elements(my_nums):
     sum = 0
-    for i in range(len(lst)):
+    for i in range(len(my_nums)):
         if i % 2 != 0:
-            sum += lst[i]
+            sum += my_nums[i]
     return sum
 
 
 print(
     f'Сумма элементов списка - [2, 3, 5, 9, 3], стоящих на нечётной позиции ='
-    f' {sum_of_add_elements(my_nums)}')
+    f' {sum_elements(my_nums)}')
 
 
 '''
