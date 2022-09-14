@@ -10,17 +10,17 @@
 my_nums = [1, 2, 3, 4, 5, 6, 7]
 
 '''
-функция multiplication_of_pair_elements которая
+функция multiplication_elements которая
 находит произведение пар чисел
 '''
-def multiplication_of_pair_elements(origin_list):
+def multiplication_elements(origin_list):
     result_list = list()
     """
     делаю округление для того, чтобы в случае нечетного количества элементов в списке
     """
     lenght = round(len(origin_list)/2)
     '''
-    "центральный" элемент перемножался сам на себя, как в примере см. README.md
+    "центральный" элемент перемножался сам на себя, как в примере
     '''
     for i in range(lenght):
         j = -i - 1
@@ -29,4 +29,4 @@ def multiplication_of_pair_elements(origin_list):
     return result_list
 
 
-print(multiplication_of_pair_elements(my_nums))
+print(multiplication_elements(my_nums))
