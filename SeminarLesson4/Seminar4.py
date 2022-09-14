@@ -99,18 +99,6 @@ from random import randint
 то в файле вряд ли будут индексы 5 или 16.
 В решении должны быть и запись в файл, и чтение из файла.
 """
-# with open('test.txt', 'w') as data:
-#     data.write('0\n')
-#     data.write('1\n')
-#     data.write('2\n')
-#     data.write('3\n')
-#     data.write('4\n')
-    
-# def get_all(n):
-#     return [randint(-n/2, n) for n in range(n)]
-
-# def get_outputs():
-
 
 def write_file(number):
     with open('file.txt', 'w') as data:
