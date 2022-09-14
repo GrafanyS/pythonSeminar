@@ -8,7 +8,10 @@
 """
 
 my_nums = [1.2, 3.4, 2.7, 4.3, 8.5]
-
+'''
+Функция round позволяет упростить работу с крупными объемами данных. 
+Ее задача — возвращать число с определенным количеством цифр после точки
+'''
 excess_nums = [round(my_nums[i] - int(my_nums[i]), 5)
                for i in range(len(my_nums))]
 print(round(max(excess_nums) - min(excess_nums), 5))
