@@ -8,9 +8,14 @@
 from os import system
 import numbers
 import itertools
-
-
-system('clear')
+'''
+Для Windows system('cls')
+'''
+system('cls') 
+'''
+Для Linux system('clear')
+'''
+# system('clear')
 
 #  генератор целочисленного последовательного списка
 def generate():

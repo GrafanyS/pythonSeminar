@@ -4,6 +4,16 @@
     N = 20 -> [2,5]
     N = 30 -> [2, 3, 5]
 """
+from os import system
+
+'''
+Для Windows system('cls')
+'''
+system('cls')
+'''
+Для Linux system('clear')
+'''
+# system('clear')
 # В примере N = 20 -> [2,5] есть ошибка, долно быть N = 20 -> [2,2,5]
 # первый вариант
 def primfacs(num):
