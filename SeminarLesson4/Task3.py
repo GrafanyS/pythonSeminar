@@ -17,13 +17,13 @@
     Анастасия Пономарева 4
 '''
 
-list_student = []
-with open("text.txt", "r") as f:
-    for line in f:
-        if '5' in line:
-            line = line.upper()
-        list_student.append(line.replace('\n', ''))
+list_student = [] # пустой список
+with open("text.txt", "r") as f: # открываем файл для чтения
+    for line in f:  # для строки в открытом файле
+        if '5' in line:  # если '5' в строке
+            line = line.upper() # переводим в верхний регистр 
+        list_student.append(line.replace('\n', '')) # добавляем и заменяем строки
 
-with open("text.txt", "w") as f:
-    for line in list_student:
-        f.write(line + '\n')
+with open("text.txt", "w") as f: # открываем файл для перезаписи
+    for line in list_student:  # для строки в list_student 
+        f.write(line + '\n')    # записываем строки
