@@ -1,6 +1,13 @@
 """
+<<<<<<< HEAD
 Шифр Цезаря - это способ шифрования, где каждая буква смещается на определенное количество символов влево или вправо. 
 При расшифровке происходит обратная операция. К примеру, слово `"абба"` можно зашифровать `"бввб"` - сдвиг на 1 вправо. 
+=======
+Шифр Цезаря - это способ шифрования, где каждая буква смещается 
+на определенное количество символов влево или вправо. 
+При расшифровке происходит обратная операция. К примеру, 
+слово `"абба"` можно зашифровать `"бввб"` - сдвиг на 1 вправо. 
+>>>>>>> 4a85a1f30ca84be98aab909c07c2749feb93e328
 `"вггв"` - сдвиг на 2 вправо, `"юяяю"` - сдвиг на 2 влево.
 
 Сдвиг часто называют ключом шифрования.
@@ -8,61 +15,72 @@
 а также функцию, которая спрашивает ключ, считывает текст и дешифровывает его.
 """
 
+quest = input(
+    'Вы хотите зашифровать или дешифровать ваше сообщение? ("зашифровать":1 "дешифровать":2) ')
+alfhavit =\
+    'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя\
+        ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
+file = open("SeminarLesson4/file_сaesar.txt", "a", encoding="utf-8")
 
-file = open('message.txt', 'rt', encoding='utf-8')
-message_file = ''.join(file.readlines())
-message_file = message_file.lower().strip()
-file.close()
-# Создаем алфавит
-alfavit = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
-# encrypted = ''  # создаем переменную для вывода итогового сообщения
-
-message_crypto = open('message_crypto.txt', 'wt')
+"""функция зашифровать"""
 
 
-def crypto(renge):
-    encrypted = ''
-    for i in renge:
-        encrypted += '*'
-    for i in renge(len(encrypted)):
-        if encrypted[i] in alfavit:
-            string = string.replace(
-                '*', alfavit[alfavit.index(encrypted[i]) - 6], 1)
-        else:
-            string = string.replace('*', encrypted[i], 1)
-    return string
+def encryption(alfhavit):
+    message = input("Введите сообщение, которое хотите зашифровать: ")
+    direction = input(
+        "Введите направление сдвига (например, 'вправо':1 'влево':2): ")
+    number = int(input("Введите шаг сдвига: "))
+    new_text = ''
+    for i in message:
+        place = alfhavit.find(i)
+        if direction == '1':
+            place_2 = place + number
+            if i in alfhavit:
+                new_text += alfhavit[place_2]
+            else:
+                new_text += i
+        elif direction == '2':
+            place_2 = place - number
+            if i in alfhavit:
+                new_text += alfhavit[place_2]
+            else:
+                new_text += i
+    return new_text
 
 
-message_crypto.writelines(crypto(message_file))
-print(crypto(message_crypto))
-message_crypto.close()
-# else:
-    # for i in message:
-    #     # Алгоритм для шифрования сообщения на английском
-    #     mesto = alfavit_EU.find(i)
-    #     new_mesto = mesto + smeshenie
-    #     if i in alfavit_EU:
-    #         itog += alfavit_EU[new_mesto]
-    #     else:
-            # itog += i
+"""функция дешифровать"""
 
 
-# print("Ваше сообщение:", encrypted)
+def decryption(alfhavit):
+    message = input("Введите сообщение, которое хотите дешифровать: ")
+    direction = input(
+        "Введите направление сдвига, которое использовали при шифровке (например, 'вправо':1 'влево':2): ")
+    number = int(input("Введите шаг сдвига: "))
+    new_text = ''
+    for i in message:
+        place = alfhavit.find(i)
+        if direction == '1':
+            place_2 = place - number
+            if i in alfhavit:
+                new_text += alfhavit[place_2]
+            else:
+                new_text += i
+        elif direction == '2':
+            place_2 = place + number
+            if i in alfhavit:
+                new_text += alfhavit[place_2]
+            else:
+                new_text += i
+    return new_text
 
 
-# file = open("message.txt", "w", encoding="utf-8")
-# message = file
-
-# alfavit = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
-
-# encrypted = ''
-
-# for i in message:
-#     mesto = alfavit.find(i)
-#     new_mesto = mesto + 1
-#     if i in alfavit:
-#         encrypted += alfavit[new_mesto]
-#     else:
-#         encrypted += i
-
-# print("Ваше сообщение:", encrypted)
+if quest == '1':
+    new_message = encryption(alfhavit)
+    file.write(new_message + '\n')
+    file.close()
+elif quest == '2':
+    new_message = decryption(alfhavit)
+    file.write(new_message + '\n')
+    file.close()
+else:
+    print("ОШИБКА")

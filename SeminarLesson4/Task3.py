@@ -76,3 +76,8 @@ def upper_file(ls: list):
 str = read_file('file_students.txt')
 upper_file(str)
 write_file('file_students.txt', str)
+
+"""
+text.text Неизменяемые данные
+test.text и file_students.txt - testing изменяемые    
+"""
