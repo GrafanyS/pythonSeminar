@@ -87,6 +87,7 @@ PS `C:> Set-ExecutionPolicy -ExecutionPolicy` RemoteSigned -Область Curre
 
 Команда для активации виртуальной среды
 
+```bash
     POSIX
 
     bash/zsh
@@ -114,6 +115,7 @@ PS `C:> Set-ExecutionPolicy -ExecutionPolicy` RemoteSigned -Область Curre
     PowerShell
 
     PS C:\> <venv>\Scripts\Activate.ps1
+```
 
 Когда виртуальная среда активна, `VIRTUAL_ENV` переменной среды устанавливается путь к виртуальной среде. Это можно использовать, чтобы проверить, выполняется ли он внутри виртуальной среды.
 
